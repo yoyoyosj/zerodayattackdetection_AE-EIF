@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import pickle
 import streamlit as st
+from keras.models import load_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import plotly.express as px
 import requests
@@ -11,8 +12,9 @@ with open('scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 with open('pca.pkl', 'rb') as f:
     pca = pickle.load(f)
-with open('ae.pkl', 'rb') as f:
-    autoencoder = pickle.load(f)
+
+# Load the Keras autoencoder model
+autoencoder = load_model('ae1.keras')
 
 @st.cache(allow_output_mutation=True)
 def load_model(url):
