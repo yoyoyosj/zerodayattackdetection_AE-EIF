@@ -11,7 +11,7 @@ with open('scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 with open('pca.pkl', 'rb') as f:
     pca = pickle.load(f)
-with open('ae.pkl', 'rb') as f):
+with open('ae.pkl', 'rb') as f:
     autoencoder = pickle.load(f)
 
 @st.cache(allow_output_mutation=True)
